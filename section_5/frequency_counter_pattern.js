@@ -44,6 +44,7 @@ function sameFCVersion(arr1, arr2) {
     }
     return true;
 }
+//test
 
 console.log(sameFCVersion([1, 2, 3], [4, 1, 9])); // true
 console.log(sameFCVersion([1, 2, 3], [1, 9])); // false
