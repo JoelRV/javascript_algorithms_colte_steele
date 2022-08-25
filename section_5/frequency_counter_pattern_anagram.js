@@ -37,3 +37,36 @@ console.log(validAnagram("rat", "car")); // false) // false
 console.log(validAnagram("awesome", "awesom")); // false
 console.log(validAnagram("qwerty", "qeywrt")); // true
 console.log(validAnagram("texttwisttime", "timetwisttext")); // true
+
+function validAnagramCourse(first, second) {
+    if (first.length !== second.length) {
+        return false;
+    }
+
+    let map = {};
+    for (let val of first) {
+        // if val in map increment by one, else initialize to 1
+        map[val] ? (map[val] += 1) : (map[val] = 1);
+    }
+
+    for (let key of second) {
+        // if map[key] non existent or 0 => false value
+        if (!map[key]) {
+            return false;
+        } else {
+            // if match, decrement. When reaching zero, any extra
+            // occurence of the same key will lead to the if condition
+            // returning a false.
+            map[key] -= 1;
+        }
+    }
+    return true;
+}
+console.log("Course solution");
+console.log(validAnagramCourse("", "")); // true
+console.log(validAnagramCourse("aaz", "zza")); // false
+console.log(validAnagramCourse("anagram", "nagaram")); // true
+console.log(validAnagramCourse("rat", "car")); // false) // false
+console.log(validAnagramCourse("awesome", "awesom")); // false
+console.log(validAnagramCourse("qwerty", "qeywrt")); // true
+console.log(validAnagramCourse("texttwisttime", "timetwisttext")); // true
