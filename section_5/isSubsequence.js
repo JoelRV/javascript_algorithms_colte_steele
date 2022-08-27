@@ -22,7 +22,7 @@ console.log(
 ); // true
 console.log(`isSubsequence('abc', 'acb')`, isSubsequence("abc", "acb")); // false (order matters)
 
-//solution
+//solution time O(n+m) space O(1)
 function isSubsequenceCourse(str1, str2) {
     var i = 0;
     var j = 0;
@@ -35,7 +35,7 @@ function isSubsequenceCourse(str1, str2) {
     return false;
 }
 
-// solution recursive
+// solution recursive but NOT O(1)
 function isSubsequenceRecursive(str1, str2) {
     if (str1.length === 0) return true;
     if (str2.length === 0) return false;
