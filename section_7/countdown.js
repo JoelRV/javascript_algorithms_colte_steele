@@ -2,6 +2,7 @@
 
 function countdown(num) {
     if (num <= 0) {
+        //base case
         console.log("All done");
         return;
     }
