@@ -24,3 +24,22 @@ function collectOddValues(arr) {
 }
 
 console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+// example using pure recursion
+function collectOddValuesPure(arr) {
+    let newArr = [];
+
+    if (arr.length === 0) {
+        return newArr; // base case
+    }
+
+    if (arr[0] % 2 !== 0) {
+        newArr.push(arr[0]);
+    }
+
+    arr.shift(); // shift first ele from arr
+    newArr = newArr.concat(collectOddValuesPure(arr)); // recursive call concatenating result from next call until arr is empty
+    return newArr;
+}
+
+console.log(collectOddValuesPure([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
