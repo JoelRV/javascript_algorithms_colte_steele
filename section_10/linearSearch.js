@@ -11,6 +11,7 @@
 
  */
 
+// time O(n)
 function linearSearch(array, query) {
     for (let i = 0; i < array.length; i++) {
         if (array[i] === query) return i;
