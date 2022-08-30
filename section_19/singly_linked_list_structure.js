@@ -120,6 +120,38 @@ class SinglyLinkedList {
         target.val = val;
         return true;
     }
+    // If the index is less than zero or greater than the length, return false
+    // If the index is the same as the length, push a new node to the end of the list
+    // If the index is 0, unshift a new node to the start of the list
+    // Otherwise, using the get method, access the node at the index - 1
+    // Set the next property on that node to be the new node
+    // Set the next property on the new node to be the previous next
+    // Increment the length
+    // Return true
+
+    insert(val, index) {
+        if (index < 0 || index > this.length) return false;
+
+        if (index === 0) return !!this.unshift(val);
+        // the double bang is equivalent to the next block
+        // it is a clever way to consicely generate a true/false
+        // return.
+        // this.unshift returns the list
+        // !list = false (opposite of a truthy value)
+        // !!list = !false = true
+
+        if (index === this.length) {
+            this.push(val);
+            return true;
+        }
+
+        let newN = new Node(val);
+        let prevNode = this.get(index - 1);
+        newN.next = prevNode.next;
+        prevNode.next = newN;
+        this.length++;
+        return true;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -137,6 +169,6 @@ console.log(list);
 list.unshift("friend");
 list.unshift("friend2");
 list.unshift("friend3");
-list.set("replaced", 1);
-list.set("replaced", 6);
+list.insert("replaced", 0);
+console.log(`list.insert("replaced2", 4)`, list.insert("replaced2", 4));
 console.log(list);
