@@ -81,7 +81,8 @@ class SinglyLinkedList {
     // If there is no head property on the list, set the head and tail to be the newly created node
     // Otherwise set the newly created node's next property to be the current head property on the list
     // Set the head property on the list to be that newly created node
-    // reurn linked list
+    // increment list length by one
+    // return linked list
     unshift(val) {
         let newN = new Node(val);
         if (!this.head) {
@@ -106,7 +107,9 @@ list.pop();
 console.log(list);
 
 list.shift();
+list.shift();
 console.log(list);
 list.unshift("friend");
 list.unshift("friend2");
+list.unshift("friend3");
 console.log(list);
