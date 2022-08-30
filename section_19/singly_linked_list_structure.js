@@ -75,6 +75,25 @@ class SinglyLinkedList {
         }
         return tempHead;
     }
+
+    // This function should accept a value
+    // Create a new node using the value passed to the function
+    // If there is no head property on the list, set the head and tail to be the newly created node
+    // Otherwise set the newly created node's next property to be the current head property on the list
+    // Set the head property on the list to be that newly created node
+    // reurn linked list
+    unshift(val) {
+        let newN = new Node(val);
+        if (!this.head) {
+            this.head = newN;
+            this.tail = newN;
+        } else {
+            newN.next = this.head;
+            this.head = newN;
+        }
+        this.length++;
+        return this;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -88,5 +107,6 @@ console.log(list);
 
 list.shift();
 console.log(list);
-list.push("friend");
+list.unshift("friend");
+list.unshift("friend2");
 console.log(list);
