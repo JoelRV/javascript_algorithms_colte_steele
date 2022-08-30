@@ -95,6 +95,20 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
+
+    // This function should accept an index
+    // If the index is less than zero or greater than or equal to the length of the list, return null
+    // Loop through the list until you reach the index and return the node at that specific index
+    get(index) {
+        if (index < 0 || index > this.length - 1) return null;
+        let counter = 0;
+        let currentNode = this.head;
+        while (counter < index) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+        return currentNode;
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -113,3 +127,4 @@ list.unshift("friend");
 list.unshift("friend2");
 list.unshift("friend3");
 console.log(list);
+console.log(`list.get(1)`, list.get(1));
