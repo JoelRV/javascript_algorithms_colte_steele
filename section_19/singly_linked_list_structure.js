@@ -171,7 +171,47 @@ class SinglyLinkedList {
         this.length--;
         return target;
     }
+
+    // Swap the head and tail
+    // Create a variable called next
+    // Create a variable called prev
+    // Create a variable called node and initialize it to the head property
+    // Loop through the list
+    // Set next to be the next property on whatever node is
+    // Set the next property on the node to be whatever prev is
+    // Set prev to be the value of the node variable
+    // Set the node variable to be the value of the next variable
+    // Once you have finished looping, return the list
+    reverse() {
+        let newN = this.head;
+        this.tail = this.head;
+
+        let next;
+
+        let prev = null; // the new tail has to point to null
+        let i = 0;
+
+        while (i < this.length) {
+            next = newN.next; // save next node
+
+            newN.next = prev; // point current node backwards
+            prev = newN; // update previous to be the current node
+            newN = next; // move a node forward by using the saved next node
+
+            i++;
+        }
+        // after the loop we are at the node that used to be the tail
+        // redefine it has the new head
+        this.head = prev;
+        return this;
+    }
 }
+
+// BigO complexity of linked Lists
+// Insertion O(1) <<< STRENGTH
+// Removal O(1) if head - > O(N) worst case if poping last element << STRENGTH
+// Searching O(n)
+// Access O(n)
 
 let list = new SinglyLinkedList();
 list.push("hello");
@@ -190,5 +230,6 @@ list.unshift("friend2");
 list.unshift("friend3");
 list.insert("replaced", 0);
 console.log(`list.remove(1)`, list.remove(1));
-console.log(`list.remove(0)`, list.remove(0));
+console.log(list);
+list.reverse();
 console.log(list);
