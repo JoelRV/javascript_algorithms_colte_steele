@@ -89,7 +89,7 @@ console.log(`binarySearch([1,2,3,4,5],2)`, binarySearch([1, 2, 3, 4, 5], 2)); //
 console.log(`binarySearch([1,2,3,4,5],3)`, binarySearch([1, 2, 3, 4, 5], 3)); // 2
 console.timeEnd("BinarySearch");
 
-console.time("BinarySearchRecrusive");
+console.time("BinarySearchRecursive");
 console.log(
     `binarySearchRecursive([1,2,3,4,5],2)`,
     binarySearchRecursive([1, 2, 3, 4, 5], 2)
@@ -98,4 +98,4 @@ console.log(
     `binarySearchRecursive([1,2,3,4,5],3)`,
     binarySearchRecursive([1, 2, 3, 4, 5], 3)
 ); // 2
-console.timeEnd("BinarySearchRecrusive");
+console.timeEnd("BinarySearchRecursive");

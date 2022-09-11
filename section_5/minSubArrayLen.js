@@ -4,10 +4,10 @@ This function should return the minimal length of a contiguous subarray of which
 
 //Pseudo code
 // starting from the left sum elements until >= int
-// note rigth index of subarray
+// note right index of subarray
 // minL = l +1
 // looping of right index > end of input Array
-// // substract array[i-l]
+// // subtract array[i-l]
 // // if sum < int : add array[l+1]
 // // if sum >= int : sumL = min(minL, i-l)
 // // l++
